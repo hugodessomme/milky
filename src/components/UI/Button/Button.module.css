@@ -1,0 +1,17 @@
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  padding: .375rem .75rem;
+  background: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.btn:hover,
+.btn:focus {
+  background: #0069d9;
+  border-color: #0062cc;
+}
