@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Auth from './containers/Auth/Auth';
+import TasksManager from './containers/TasksManager/TasksManager';
+import Layout from './components/Layout/Layout';
 
-function App() {
-  return (
-    <div className="App">
-      <Auth />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Layout>
+        {this.props.isAuthenticated ? <TasksManager /> : <Auth />}
+      </Layout>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = ({ auth }) => {
+  return {
+    isAuthenticated: auth.isAuthenticated
+  };
+};
+
+export default connect(mapStateToProps)(App);

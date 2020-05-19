@@ -2,7 +2,8 @@ import { AUTH_START, AUTH_SUCCESS, AUTH_FAIL } from '../actions/types';
 
 const initialState = {
   loading: false,
-  error: null
+  error: null,
+  isAuthenticated: true
 };
 
 const reducer = (state = initialState, action) => {
@@ -15,7 +16,8 @@ const reducer = (state = initialState, action) => {
     case AUTH_SUCCESS:
       return {
         ...state,
-        loading: false
+        loading: false,
+        isAuthenticated: true
       };      
     case AUTH_FAIL:
       return {
